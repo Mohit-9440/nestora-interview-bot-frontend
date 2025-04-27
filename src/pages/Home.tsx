@@ -23,6 +23,8 @@ const Home = () => {
       </nav>
 
       <div className="flex-grow flex flex-col justify-center items-center text-center px-6">
+        <div className="absolute w-72 h-72 bg-primary opacity-20 rounded-full blur-3xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+
         <h1
           className="text-5xl md:text-6xl font-extrabold text-darkslate leading-tight mb-6"
           data-aos="fade-up"
