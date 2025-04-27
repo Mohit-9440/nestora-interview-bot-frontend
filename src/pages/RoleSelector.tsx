@@ -18,24 +18,35 @@ const RoleSelector = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-background via-white to-background">
       <Navbar />
-      <div className="flex flex-col items-center justify-center flex-grow p-6">
-        <h1 className="text-4xl font-extrabold text-primary mb-8 text-center drop-shadow-md">
-          Select Your Role to Start 🚀
+
+      <div className="flex-grow flex flex-col items-center justify-center p-6 text-center">
+        <h1
+          className="text-4xl font-extrabold text-primary mb-10"
+          data-aos="fade-up"
+        >
+          Select Your Role 🚀
         </h1>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full">
           {roles.map((role, idx) => (
             <div
               key={idx}
-              className="cursor-pointer bg-white p-6 rounded-2xl shadow-md hover:shadow-lg border border-primary hover:bg-primary hover:text-white transition-all duration-300"
               onClick={() => handleSelectRole(role)}
+              className="cursor-pointer bg-white/60 backdrop-blur-lg p-8 rounded-2xl shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-primary hover:bg-primary hover:text-white font-semibold text-lg"
+              data-aos="zoom-in"
+              data-aos-delay={idx * 100}
             >
-              <h2 className="text-2xl font-bold text-center">{role}</h2>
+              {role}
             </div>
           ))}
         </div>
       </div>
+
+      <footer className="text-center text-gray-400 text-sm py-6">
+        © {new Date().getFullYear()} NestoraPrep. Powered by React + OpenAI.
+      </footer>
     </div>
   );
 };
